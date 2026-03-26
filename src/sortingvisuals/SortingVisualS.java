@@ -2,6 +2,7 @@ package sortingvisuals;
 
 import sortingvisuals.algorithms.SortAlgorithm;
 import sortingvisuals.algorithms.BubbleSort;
+import sortingvisuals.algorithms.SelectionSort;
 
 import javafx.application.Application;
 import javafx.geometry.Insets;
@@ -39,15 +40,14 @@ public class SortingVisualS extends Application {
         Button genBtn = new Button("Generate");
         Button sortBtn = new Button("Sort");
         
-        ComboBox<String> algSelect = new ComboBox<>();
-        algSelect.getItems().addAll("Bubble Sort");
+        ComboBox<SortAlgorithm> algSelect = new ComboBox<>();
+        algSelect.getItems().addAll(
+                new BubbleSort(),
+                new SelectionSort()
+        );
         
         algSelect.setOnAction(e -> {
-            String selected = algSelect.getValue();
-            
-            if (selected.equals("Bubble Sort")) {
-                currentAlgorithm = new BubbleSort();
-            }
+            currentAlgorithm = algSelect.getValue();
         });
         
         genBtn.setOnAction(e -> generateArray());

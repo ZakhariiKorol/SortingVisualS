@@ -72,4 +72,9 @@ public class BubbleSort implements SortAlgorithm {
     timeline.setCycleCount(Timeline.INDEFINITE);
     timeline.play();
     }
+    
+    @Override
+    public String toString() {
+        return "Bubble Sort";
+    }
 }
