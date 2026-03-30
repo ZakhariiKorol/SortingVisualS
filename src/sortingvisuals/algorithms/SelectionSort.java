@@ -71,7 +71,7 @@ public class SelectionSort implements SortAlgorithm {
                     bar.setFill(Color.GREEN);
                 }
                 
-                ((Timeline) e.getSource()).stop();
+                timeline.stop();
             }
         }));
         
